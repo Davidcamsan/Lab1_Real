@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="PersonaView"
+
+             x:Class="Lab1.Views.PersonaView">
+     <StackLayout>
+        <Label Text="Lista de Clientes"/>
+        <ListView x:Name="lstvClientes"
+                  ItemsSource="{Binding lstPersonas}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Nombre}"/>
+                            <Label Text="{Binding ApellidoPaterno}"/>
+                            <Label Text="{Binding ApellidoMaterno}"/>
+                            <Image Source="addButton" HorizontalOptions="EndAndExpand">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.VerPersonaCommand, Source={x:Reference PersonaView}}" 
+                                                          CommandParameter="{Binding ID}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

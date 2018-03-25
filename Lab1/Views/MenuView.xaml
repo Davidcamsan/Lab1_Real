@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Lab1.Views.MenuView"
+             Title = "Titulo">
+<StackLayout Orientation="Vertical">
+     <!--Persona, Foto perfil -->
+   <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Padding="30">
+        <StackLayout>
+            <Image Source="PersonaContactoInfo" HeightRequest="50" WidthRequest="50"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="Start">
+            <Label Text="David Cambronero"/>
+        </StackLayout>
+   </StackLayout>
+
+  <!--Menu Items -->
+    <StackLayout Orientation="Vertical">
+        <ListView x:Name= "listaMenuMaster">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Opcion 1</x:String>
+                    <x:String>Opcion 2</x:String>
+                    <x:String>Opcion 3</x:String>
+                    <x:String>Opcion 4</x:String>
+                    <x:String>Opcion 5</x:String>    
+                </x:Array>
+            </ListView.ItemsSource>
+        </ListView>
+    </StackLayout>
+</StackLayout>
+    
+</ContentPage>
+

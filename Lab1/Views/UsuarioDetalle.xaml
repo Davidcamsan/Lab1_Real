@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab1.Views.UsuarioDetalle">
+
+
+    
+ <StackLayout HorizontalOptions="Fill">
+        <!--Detalle Persona-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Padding="30">
+            <StackLayout>
+                <Image Source="PersonaContactoInfo" HeightRequest="50" WidthRequest="50"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="Center">
+                <Label Text="{Binding PersonaActual.Nombre}"/>
+                <Label Text="{Binding PersonaActual.Telefono}"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <!--Informacion de Persona-->
+            <StackLayout HorizontalOptions="Fill" VerticalOptions="Start">
+                <!--Nombre-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nombre Completo:"/>
+                    <Label Text="{Binding PersonaActual.NombreCompleto}"/>
+                </StackLayout>
+                <!--Telefono-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Telefono:"/>
+                    <Label Text="{Binding PersonaActual.Telefono}"/>
+                </StackLayout>
+                <!--Direccion-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Direccion:"/>
+                    <Label Text="{Binding PersonaActual.Direccion}"/>
+                </StackLayout>
+                 <!--Fecha Nacimiento-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Fecha de Nacimiento: " Font="12"/>
+                    <Label Text="{Binding PersonaActual.FechaNacimiento}" Font="12"/>
+                </StackLayout>
+            </StackLayout>
+            <!--Lista de Ventas-->
+            <StackLayout>
+             <ListView x:Name="lstvAccounts"
+                  ItemsSource="{Binding PersonaActual.lstVentas}"  BackgroundColor="Blue">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="carlos" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Text="{Binding Tipo}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Text="{Binding Monto}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackLayout>
+            <!--Cuadro Acciones-->
+            <StackLayout HeightRequest="50" VerticalOptions="EndAndExpand" HorizontalOptions="Fill">
+                <Button Text="Nueva Venta" Command="{Binding EnterNuevaVentaCommand}" />
+            </StackLayout>
+        </StackLayout>
+        <Button Text="Editar" VerticalOptions="End" HeightRequest="50"/>
+    </StackLayout>
+</ContentPage>
