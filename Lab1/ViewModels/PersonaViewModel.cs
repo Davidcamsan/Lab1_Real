@@ -71,6 +71,7 @@ namespace Lab1.ViewModels
         }
 
         public ICommand VerPersonaCommand { get; set; }
+        public ICommand EnterNuevaVentaCommand { get; set; }
 
         #endregion
 
@@ -85,6 +86,11 @@ namespace Lab1.ViewModels
             ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new UsuarioDetalle());
         }
 
+        private void NuevaVenta()
+        {
+            ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new NuevaVentaView());
+        }
+
         #endregion
 
 
@@ -97,6 +103,7 @@ namespace Lab1.ViewModels
         {
 
             VerPersonaCommand = new Command<int>(VerPersona);
+            EnterNuevaVentaCommand = new Command(NuevaVenta);
         }
 
         #region INotifyPropertyChange Interface

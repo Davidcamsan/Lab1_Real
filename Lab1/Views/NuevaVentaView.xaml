@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="NuevaVentaView"
+             
              x:Class="Lab1.Views.NuevaVentaView">
-    <StackLayout Orientation="Vertical" Margin="10">
-        <StackLayout>
-        <Grid> <!-- 7 x 7 -->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/> 
-                <RowDefinition Height="*"/> 
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+    <StackLayout Orientation="Vertical" Margin="10" BackgroundColor="Teal">
 
-            <Label Text="ID: " Grid.Row="0" Grid.Column="0" VerticalTextAlignment="End" HorizontalOptions="Center" FontSize="20" />
-            <Entry Text="Digite ID" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="2" VerticalOptions="Start" FontSize="12" />
-            </Grid>
-            </StackLayout>
-            <Editor Text="Descripción de Producto" FontSize="12" BackgroundColor="Blue"/>
-              
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="Navy">
+            <Label Text="Nueva Venta" FontSize="15" HorizontalOptions="CenterAndExpand" TextColor="White"/>
+        </StackLayout>
+
+   <!--************ ID ******-->
+        <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="10,0">
+            <Label Text="ID:" BackgroundColor="Blue" FontSize="12" VerticalOptions="Center"/>
+            <Entry Text="Please Enter ID of Sale" FontSize="12"/>
+        </StackLayout>
+
+   <!--************ Descripción de Venta **********-->
+        <StackLayout BackgroundColor="Green" Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="10,0">
+            <Label Text="Descripcion de Venta" FontSize="14" HorizontalOptions="CenterAndExpand"/>
+            <Editor BackgroundColor="White" FontSize="12" Text="Enter Sale Description" VerticalOptions="FillAndExpand"/>
+        </StackLayout>
+
+   <!--************ Monto ********************-->
+        <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="10,0">
+            <Label Text="Monto:" FontSize="12" VerticalOptions="Center"/>
+            <Entry Text="Please Enter Cost" FontSize="12" HorizontalOptions="FillAndExpand"/> 
+        </StackLayout>
+
+   <!--************ Tipo ******************-->
+        <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="10,0">
+            <Label Text="Tipo:" FontSize="12" VerticalOptions="Center"/>
+            <Entry Text="Please Enter Type" FontSize="12" HorizontalOptions="FillAndExpand"/> 
+        </StackLayout>
+
+   <!--************* Botón de Finalizado **************-->
+        <StackLayout Orientation="Horizontal" Margin="10,0,10,10">
+            <Button BackgroundColor="Fuchsia" Text="Aceptar" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
         
-    </StackLayout>
+
+        
+    </StackLayout> 
 </ContentPage>

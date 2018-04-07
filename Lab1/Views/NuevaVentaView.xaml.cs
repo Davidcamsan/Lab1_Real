@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
+using Lab1.ViewModels;
 
 namespace Lab1.Views
 {
@@ -10,6 +10,8 @@ namespace Lab1.Views
         public NuevaVentaView()
         {
             InitializeComponent();
+            BindingContext = PersonaViewModel.GetInstance();
+
         }
     }
 }
