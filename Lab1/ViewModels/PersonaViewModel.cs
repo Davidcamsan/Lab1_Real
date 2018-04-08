@@ -55,6 +55,17 @@ namespace Lab1.ViewModels
             }
         }
 
+        private Ventas _VentaActual { get; set; }
+        public Ventas VentaActual {
+            get{
+                return _VentaActual;
+            }
+            set{
+                _VentaActual = value;
+                OnPropertyChanged("VentaActual");
+            }
+        }
+
         private ObservableCollection<PersonaModel> _lstPersonas = new ObservableCollection<PersonaModel>();
 
         public ObservableCollection<PersonaModel> lstPersonas
@@ -80,6 +91,7 @@ namespace Lab1.ViewModels
         private void VerPersona(int id)
         {
             PersonaActual = lstPersonas.Where(x => x.ID == id).FirstOrDefault();
+            OnPropertyChanged("PersonaActual");
 
             //App.Current.MainPage = new UsuarioDetalle();
 

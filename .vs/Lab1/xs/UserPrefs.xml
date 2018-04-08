@@ -1,13 +1,10 @@
 ﻿<Properties StartupConfiguration="{40456DF1-D6A1-4F05-8195-B1DFCDD6E48E}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Lab1/Views/UsuarioDetalle.xaml">
     <Files>
-      <File FileName="Lab1/Views/PersonaView.xaml" Line="26" Column="24" />
-      <File FileName="Lab1/Views/NuevaVentaView.xaml" Line="4" Column="36" />
-      <File FileName="Lab1/ViewModels/PersonaViewModel.cs" Line="1" Column="1" />
-      <File FileName="Lab1/Views/PersonaView.xaml.cs" Line="1" Column="1" />
-      <File FileName="Lab1/Views/UsuarioDetalle.xaml.cs" Line="1" Column="1" />
+      <File FileName="Lab1/Views/PersonaView.xaml" Line="32" Column="1" />
       <File FileName="Lab1/Views/UsuarioDetalle.xaml" Line="68" Column="1" />
-      <File FileName="Lab1/Models/PersonaModel.cs" Line="1" Column="1" />
+      <File FileName="Lab1/Views/NuevaVentaView.xaml" Line="47" Column="1" />
+      <File FileName="Lab1/ViewModels/PersonaViewModel.cs" Line="60" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

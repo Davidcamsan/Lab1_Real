@@ -13,7 +13,7 @@
    <!--************ ID ******-->
         <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="10,0">
             <Label Text="ID:" BackgroundColor="Blue" FontSize="12" VerticalOptions="Center"/>
-            <Entry Text="Please Enter ID of Sale" FontSize="12"/>
+            <Entry Text="{Binding VentaACt}" FontSize="12" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
 
    <!--************ Descripción de Venta **********-->
@@ -36,7 +36,7 @@
 
    <!--************* Botón de Finalizado **************-->
         <StackLayout Orientation="Horizontal" Margin="10,0,10,10">
-            <Button BackgroundColor="Fuchsia" Text="Aceptar" HorizontalOptions="FillAndExpand"/>
+            <Button BackgroundColor="Fuchsia" Text="Aceptar" HorizontalOptions="FillAndExpands"/>
         </StackLayout>
 
         
