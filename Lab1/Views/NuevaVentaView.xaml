@@ -13,32 +13,31 @@
    <!--************ ID ******-->
         <StackLayout Orientation="Horizontal" BackgroundColor="White" Margin="10,0">
             <Label Text="ID:" BackgroundColor="Blue" FontSize="12" VerticalOptions="Center"/>
-            <Entry Text="{Binding VentaACt}" FontSize="12" HorizontalOptions="FillAndExpand"/>
+            <Entry Text="{Binding VentaActual.ID}" FontSize="12" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
 
-   <!--************ Descripción de Venta **********-->
+      <!--************Descripción de Venta *********-->
         <StackLayout BackgroundColor="Green" Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="10,0">
             <Label Text="Descripcion de Venta" FontSize="14" HorizontalOptions="CenterAndExpand"/>
-            <Editor BackgroundColor="White" FontSize="12" Text="Enter Sale Description" VerticalOptions="FillAndExpand"/>
+            <Editor BackgroundColor="White" FontSize="12" Text="{Binding VentaActual.Descripcion}" VerticalOptions="FillAndExpand"/>
         </StackLayout>
 
-   <!--************ Monto ********************-->
+      <!--************Monto  *********-->
         <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="10,0">
             <Label Text="Monto:" FontSize="12" VerticalOptions="Center"/>
-            <Entry Text="Please Enter Cost" FontSize="12" HorizontalOptions="FillAndExpand"/> 
+            <Entry Text="{Binding VentaActual.Monto}" FontSize="12" HorizontalOptions="FillAndExpand"/> 
         </StackLayout>
 
-   <!--************ Tipo ******************-->
+  <!--************ Tipo *********-->
         <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="10,0">
             <Label Text="Tipo:" FontSize="12" VerticalOptions="Center"/>
-            <Entry Text="Please Enter Type" FontSize="12" HorizontalOptions="FillAndExpand"/> 
+            <Entry Text="{Binding VentaActual.Tipo}" FontSize="12" HorizontalOptions="FillAndExpand"/> 
         </StackLayout>
 
-   <!--************* Botón de Finalizado **************-->
+   <!--************ Botón de Finalizado ********************-->
         <StackLayout Orientation="Horizontal" Margin="10,0,10,10">
-            <Button BackgroundColor="Fuchsia" Text="Aceptar" HorizontalOptions="FillAndExpands"/>
+            <Button BackgroundColor="Fuchsia" Text="Aceptar" HorizontalOptions="FillAndExpand" Command="{Binding AgregarNuevaVentaCommand}"/>
         </StackLayout>
-
         
 
         

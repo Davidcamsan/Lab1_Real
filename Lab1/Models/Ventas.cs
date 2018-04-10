@@ -3,12 +3,8 @@ namespace Lab1.Models
 {
     public class Ventas
     {
-        public Ventas(int id, string des, double mon, string tip)
+        public Ventas()
         {
-            ID = id;
-            Descripcion = des;
-            Monto = mon;
-            Tipo = tip;
 
         }
 

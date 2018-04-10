@@ -55,7 +55,7 @@ namespace Lab1.ViewModels
             }
         }
 
-        private Ventas _VentaActual { get; set; }
+        private Ventas _VentaActual = new Ventas();
         public Ventas VentaActual {
             get{
                 return _VentaActual;
@@ -83,6 +83,8 @@ namespace Lab1.ViewModels
 
         public ICommand VerPersonaCommand { get; set; }
         public ICommand EnterNuevaVentaCommand { get; set; }
+        public ICommand AgregarNuevaVentaCommand { get; set; }
+        public ICommand EditarVentaCommand { get; set; }
 
         #endregion
 
@@ -91,7 +93,6 @@ namespace Lab1.ViewModels
         private void VerPersona(int id)
         {
             PersonaActual = lstPersonas.Where(x => x.ID == id).FirstOrDefault();
-            OnPropertyChanged("PersonaActual");
 
             //App.Current.MainPage = new UsuarioDetalle();
 
@@ -100,6 +101,24 @@ namespace Lab1.ViewModels
 
         private void NuevaVenta()
         {
+            VentaActual = new Ventas();
+            ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new NuevaVentaView());
+        }
+
+        private void AgregarVenta(){ //Como hago para que cuando se haga el POP, aparezca la nueva venta de una vez?
+            int index = PersonaActual.lstVentas.FindIndex(f => f == VentaActual);
+            if (index < 0)
+            {
+                PersonaActual.lstVentas.Add(VentaActual);
+            }
+
+            OnPropertyChanged("PersonaActual.lstVentas");
+            ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PopAsync();
+
+        }
+
+        private void EditarVenta(int id){
+            VentaActual = PersonaActual.lstVentas.Find(x => x.ID == id);
             ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new NuevaVentaView());
         }
 
@@ -116,6 +135,8 @@ namespace Lab1.ViewModels
 
             VerPersonaCommand = new Command<int>(VerPersona);
             EnterNuevaVentaCommand = new Command(NuevaVenta);
+            AgregarNuevaVentaCommand = new Command(AgregarVenta);
+            EditarVentaCommand = new Command<int>(EditarVenta);
         }
 
         #region INotifyPropertyChange Interface

@@ -11,9 +11,10 @@ namespace Lab1.Models
     {
         public PersonaModel()
         {
-            lstVentas.Add(new Ventas(1, "arroz", 2.3, "comida"));
-            lstVentas.Add(new Ventas(1, "queso", 2.3, "comida"));
-            lstVentas.Add(new Ventas(1, "pan", 2.3, "comida"));
+            lstVentas = new List<Ventas>();
+            lstVentas.Add(new Ventas { ID= 1, Descripcion= "arroz", Monto= 2.3, Tipo= "comida" });
+            lstVentas.Add(new Ventas { ID = 2, Descripcion = "arroz", Monto = 2.3, Tipo = "comida" });
+            lstVentas.Add(new Ventas { ID = 3, Descripcion = "arroz", Monto = 2.3, Tipo = "comida" });
            
         }
 
@@ -31,7 +32,7 @@ namespace Lab1.Models
 
         public string Telefono { get; set; }
 
-        public List<Ventas> lstVentas = new List<Ventas>();
+        public List<Ventas> lstVentas { get; set; } 
 
 
 

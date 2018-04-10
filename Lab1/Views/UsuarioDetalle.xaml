@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="UsuarioDetalle"
              x:Class="Lab1.Views.UsuarioDetalle">
 
 
@@ -48,7 +49,11 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="carlos" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.EditarVentaCommand, Source={x:Reference UsuarioDetalle}}"
+                                                              CommandParameter="{Binding ID}"/>
+                                    </StackLayout.GestureRecognizers>
+                                <Label Text="{Binding ID}" HorizontalOptions="Start" VerticalOptions="Center"/>
                                 <Label Text="{Binding Tipo}" HorizontalOptions="Start" VerticalOptions="Center"/>
                                 <Label Text="{Binding Monto}" HorizontalOptions="Start" VerticalOptions="Center"/>
                             </StackLayout>
